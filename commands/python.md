@@ -33,3 +33,19 @@ pip install seaborn
 ```
 python -c "import seaborn as sns; print(sns.__version__)"
 ```
+
+## Ejecutar servidor HTTP
+
+Es posible usar el servidor HTTP integrado para páginas web estáticas que carguen archivos desde `config.json` con JavaScript.
+
+1. Abrir una terminal o línea de comandos.
+
+2. Navegar hasta el directorio del proyecto.
+
+3. Ejecutar el siguiente comando (de Python 3):
+
+```
+python3 -m http.server
+```
+
+4. Esto iniciará un servidor local en el puerto 8000. Accede a tu proyecto en tu navegador a través de `http://localhost:8000`.
