@@ -1,0 +1,78 @@
+\documentclass[a5paper,12pt,twoside]{book}
+%\setlength{\headheight}{15pt} % Sirve para corregir un error asociado a fancyhdr
+
+\input{book-packages}
+\input{book-commands}
+
+% ENTORNOS DE NUMERACIÓN
+\newtheorem{defn}{{Definición}}[chapter]
+\newtheorem{prop}{{Propiedad}}[chapter]
+\newtheorem{example}{{Ejemplo}}[chapter]
+
+% ENTORNOS DE FORMATO
+\newenvironment{formatI}{\vspace{1ex}\par\small\sffamily} % Consignas de ejemplos
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhf{}
+\chead{\scriptsize \nouppercase\rightmark}
+\cfoot{\scriptsize \thepage}
+\pagenumbering{gobble}
+\renewcommand{\headrulewidth}{0pt}
+
+\frontmatter
+% \includepdf{cover}
+
+\begin{center}
+    \begin{Huge}
+        \textbf{Título del libro}
+    \end{Huge}
+
+    \vspace{1cm}
+    \textbf{Segunda edición}
+    \vspace{2cm}
+
+    \begin{Large}
+        Malvicino, Maximiliano R.
+        % \\ Apellido, Nombre de otros autores
+    \end{Large}
+\end{center}
+
+\clearpage
+\noindent
+\textbf{Prefacio}
+
+La versión digital más reciente de este texto puede ser descargada gratuitamente de \url{https://es.overleaf.com/read/tgbpgkmjrjvf}.
+
+\renewcommand{\spanishappendixname}{Anexo}
+\tableofcontents
+
+\mainmatter
+\pagenumbering{arabic}
+
+
+\chapter{Nombre del primer capítulo}
+
+
+\section{Nombre de la primera sección}
+
+Primera cita \parencite{lamport}
+
+\renewcommand{\bibname}{\begin{center}Referencias\end{center}}
+\printbibliography
+\addcontentsline{toc}{chapter}{Referencias}
+
+\appendix
+
+
+\chapter{Anexo de un tema}
+
+
+\section{Primera sección del apéndice}
+
+
+\chapter{Anexo de otro tema}
+
+
+\end{document}

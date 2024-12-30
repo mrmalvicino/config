@@ -1,0 +1,112 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C/C++: clang++",
+            "detail": "Compile | MacOs",
+            "type": "shell",
+            "command": "clang++",
+            "args": [
+                "-stdlib=libc++",
+                "-std=c++14",
+                "-std=c++17",
+                "-Wall",
+                "-Wextra",
+                "-pedantic",
+                "-pedantic-errors",
+                "-g",
+                "${fileDirname}/main.cpp",
+                "${fileDirname}/API/sources/*.cpp",
+                "${fileDirname}/BLL/sources/*.cpp",
+                "${fileDirname}/DAL/sources/*.cpp",
+                "${fileDirname}/DML/sources/*.cpp",
+                "${fileDirname}/UI/sources/*.cpp",
+                "-o",
+                "${fileDirname}/bin/${fileBasenameNoExtension}",
+                "-framework", // MacOs API
+                "ApplicationServices" // MacOs API
+                // "-lsfml-graphics", // SFML
+                // "-lsfml-window", // SFML
+                // "-lsfml-system", // SFML
+                // "-lsfml-audio", // SFML
+                // "-lsfml-network", // SFML
+                // "-I/opt/homebrew/Cellar/sfml/2.6.1/include", // SFML
+                // "-L/opt/homebrew/Cellar/sfml/2.6.1/lib" // SFML
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "C/C++: g++",
+            "detail": "Compile | Linux",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-Wall",
+                "-Wextra",
+                "-pedantic",
+                "-g",
+                "${fileDirname}/main.cpp",
+                "${fileDirname}/API/sources/*.cpp",
+                "${fileDirname}/BLL/sources/*.cpp",
+                "${fileDirname}/DAL/sources/*.cpp",
+                "${fileDirname}/DML/sources/*.cpp",
+                "${fileDirname}/UI/sources/*.cpp",
+                "-o",
+                "${fileDirname}/bin/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "/usr/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "C/C++: g++.exe",
+            "detail": "Compile | Windows",
+            "type": "shell",
+            "command": "g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-std=c++17",
+                "-Wall",
+                "-Wextra",
+                "-pedantic",
+                "${fileDirname}\\main.cpp",
+                "${fileDirname}\\API\\sources\\*.cpp",
+                "${fileDirname}\\BLL\\sources\\*.cpp",
+                "${fileDirname}\\DAL\\sources\\*.cpp",
+                "${fileDirname}\\DML\\sources\\*.cpp",
+                "${fileDirname}\\UI\\sources\\*.cpp",
+                "-o",
+                "${fileDirname}\\bin\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "label": "Run program",
+            "type": "shell",
+            "command": "/Users/mrmalvicino/Desktop/GitHub/dugun-auto-clicker/bin/main",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

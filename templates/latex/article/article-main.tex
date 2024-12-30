@@ -1,0 +1,120 @@
+\documentclass[a4paper,12pt]{article}
+% \setlength{\headheight}{15pt} % Sirve para corregir un error asociado a fancyhdr
+
+\input{article-packages}
+\input{article-commands}
+
+\begin{document}
+
+\begin{center}
+    % \includegraphics[width=8cm]{Logo Universidad.png}
+    
+    \vspace{5cm} % Achicar carátula con esta medida
+    \begin{Large}
+        Nombre de Carrera.
+        \\ \vspace{1cm}
+        Nombre de Asignatura 1.
+    \end{Large}
+    \vspace{2cm}
+
+    \begin{Huge}
+        \textbf{Título del informe.}
+    \end{Huge}
+
+    \vspace{1cm}
+    \textbf{dd/mm/aa}
+    \vspace{5cm} % Achicar carátula con esta medida
+
+    \begin{Large}
+        Malvicino, Maximiliano R. \\ mrmalvicino@gmail.com
+        % \\ \vspace{1cm}
+        % Apellido, Nombre. \\ mail@gmail.com
+        % \\ \vspace{1cm}
+        % Apellido, Nombre. \\ mail@gmail.com
+        % \\ \vspace{1cm}
+        
+    \end{Large}
+
+\end{center}
+
+
+\clearpage
+
+\begin{abstract}
+    El objetivo de este trabajo es ...
+    
+    % \begin{center}
+    %     \textbf{Abstract}
+    % \end{center}
+
+    % The purpose of this project is ...
+
+\end{abstract}
+
+\clearpage
+
+% \renewcommand{\spanishappendixname}{Anexo}
+% \renewcommand{\contentsname}{Índice global}
+\tableofcontents
+
+% \renewcommand\listfigurename{}
+% \listoffigures
+
+% \renewcommand\spanishtablename{Tabla}
+% \renewcommand\listtablename{Índice de tablas}
+% \listoftables
+
+
+\clearpage
+
+
+\begin{multicols}{2}
+
+
+% INTRODUCCIÓN
+\section{Introducción}
+
+
+% MARCO TEÓRICO
+\section{Marco teórico}
+
+
+% DESARROLLO EXPERIMENTAL
+\section{Desarrollo experimental}
+
+
+\subsection{Lista de materiales usados}
+
+\begin{itemize}
+    \item Material 1
+    \item Material 2
+    \item Material 3
+    \item Material n
+\end{itemize}
+
+
+% RESULTADOS
+\section{Resultados}
+
+
+% CONCLUSIONES
+\section{Conclusiones}
+
+
+\end{multicols}
+
+\clearpage
+\begin{thebibliography}{1}
+    \bibitem{1} \textsc{Apellido, N. (Año). Título.}
+    % \url{https://www.google.com}
+\end{thebibliography}
+
+
+% \clearpage
+% \appendix
+
+
+% \section{Anexo}
+
+
+\end{document}

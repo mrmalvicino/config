@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../deploy"
+		},
+		{
+			"path": "../ecommerce-net"
+		},
+		{
+			"path": "../meeni-erp"
+		},
+		{
+			"path": "."
+		}
+	]
+}
