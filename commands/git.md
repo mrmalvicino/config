@@ -170,6 +170,42 @@ git branch -d nombredelarama
 git config --global init.defaultBranch <name>
 ```
 
+## Combinar los últimos dos commits:
+
+1. Asegurarse de estar en la rama correcta:
+```
+git checkout <nombre_de_la_rama>
+```
+
+2. Iniciar un rebase interactivo:
+```
+git rebase -i HEAD~2
+```
+
+- Se abrirá un editor de texto mostrando los últimos dos commits:
+```
+pick abc123 Mensaje del primer commit
+pick def456 Mensaje del segundo commit
+```
+
+- Cambiar el segundo pick por squash
+```
+pick abc123 Mensaje del primer commit
+squash def456 Mensaje del segundo commit
+```
+
+- Guardar y salir del editor:
+```
+:wq
+```
+
+- Editar el mensaje del commit resultante.
+
+3. Si ya se había hecho push, cambiar el historial de la rama:
+```
+git push origin <nombre_de_la_rama> --force
+```
+
 ## Otros
 
 - Borrrar el último commit sin dejar rastro:
