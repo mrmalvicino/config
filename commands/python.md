@@ -48,4 +48,4 @@ Es posible usar el servidor HTTP integrado para páginas web estáticas que carg
 python3 -m http.server
 ```
 
-4. Esto iniciará un servidor local en el puerto 8000. Accede a tu proyecto en tu navegador a través de `http://localhost:8000`.
+4. Esto iniciará un servidor local en el puerto 8000. Accede a tu proyecto en tu navegador a través de `http://localhost:8000`. También es posible acceder a través de `http://IP:8000` desde un dispositivo conectado a la misma red WiFi que el servidor.
