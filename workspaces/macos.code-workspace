@@ -4,6 +4,9 @@
 			"path": "../../dsp-package"
 		},
 		{
+			"path": "../../link-tree"
+		},
+		{
 			"path": ".."
 		},
 		{
