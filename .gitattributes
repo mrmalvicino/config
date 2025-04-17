@@ -1,0 +1,12 @@
+# Linguist (languages percentages)
+
+*.sh linguist-vendored
+*.bat linguist-vendored
+*.py linguist-vendored
+*.html linguist-vendored
+*.json linguist-vendored
+*.yml linguist-vendored
+*.tex linguist-vendored
+*.bib linguist-vendored
+*.svg linguist-vendored
+*.pdf linguist-vendored
