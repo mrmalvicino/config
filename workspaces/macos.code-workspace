@@ -1,10 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "../../dsp-package"
+			"path": "../../dsp-notes"
 		},
 		{
-			"path": "../../link-tree"
+			"path": "../../dsp-package"
 		},
 		{
 			"path": ".."
