@@ -4,6 +4,9 @@
 			"path": ".."
 		},
 		{
+			"path": "../../HalleyV2"
+		},
+		{
 			"path": "../../OnboardingMaxi"
 		}
 	]
