@@ -8,6 +8,6 @@ def listar_estructura_directorio(ruta, prefijo=''):
             listar_estructura_directorio(ruta_completa, prefijo + '│   ')
 
 if __name__ == '__main__':
-    ruta_objetivo = './../../'
+    ruta_objetivo = './../../HalleyV2/'
     print(ruta_objetivo)
     listar_estructura_directorio(ruta_objetivo)
