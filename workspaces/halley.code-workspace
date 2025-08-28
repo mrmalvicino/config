@@ -4,6 +4,12 @@
 			"path": ".."
 		},
 		{
+			"path": "../../HalleyAdmin"
+		},
+		{
+			"path": "../../halley-backup"
+		},
+		{
 			"path": "../../HalleyV2"
 		},
 		{
