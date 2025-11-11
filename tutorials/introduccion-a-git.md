@@ -13,7 +13,16 @@
   - [Sincronizar cambios por terminal](#sincronizar-cambios-por-terminal)
   - [Git LFS](#git-lfs)
     - [Configuración e instalación de Git LFS](#configuración-e-instalación-de-git-lfs)
-    - [Ejemplos de uso:](#ejemplos-de-uso)
+    - [Ejemplos de uso](#ejemplos-de-uso)
+  - [Trabajar con ramas](#trabajar-con-ramas)
+    - [¿Qué es una rama?](#qué-es-una-rama)
+    - [Git Workflow](#git-workflow)
+    - [Comandos básicos](#comandos-básicos)
+    - [Agregar cambios de una rama en un solo commit](#agregar-cambios-de-una-rama-en-un-solo-commit)
+  - [Comandos peligrosos](#comandos-peligrosos)
+    - [Borrrar el último commit sin dejar rastro](#borrrar-el-último-commit-sin-dejar-rastro)
+    - [Cambiar el mensaje del último commit](#cambiar-el-mensaje-del-último-commit)
+    - [Combinar los últimos dos commits](#combinar-los-últimos-dos-commits)
 
 ## Conceptos básicos
 
@@ -199,7 +208,7 @@ Luego de [descargar Git LFS](https://git-lfs.github.com/), basta con inicializar
 git lfs install
 ```
 
-### Ejemplos de uso:
+### Ejemplos de uso
 
 - Guardar con Git LFS todos los archivos con extensión "png":
 
@@ -229,4 +238,149 @@ git lfs install
 
     ```
     git lfs ls-files
+    ```
+
+## Trabajar con ramas
+
+### ¿Qué es una rama?
+
+&nbsp;
+Una rama en Git es una línea de tiempo paralela del proyecto.
+Diferentes ramas pueden tener diferentes commits independientes los unos de los otros.
+Una rama sirve para trabajar en una nueva funcionalidad o corrección sin afectar el código principal (de la rama `main`).
+Las ramas pueden converger, de manera que la receptora pase a tener los commits de la rama que se está fusionando.
+Tras una fusión, la cronología de los commits se mantiene intacta, ya que ambas ramas respetan el momento en que se realizaron los commits y el estado del repositorio en cada commit.
+Por este motivo, al unir dos ramas se pueden generar conflictos si hay commits contradictorios.
+
+### Git Workflow
+
+&nbsp;
+El Workflow o flujo de trabajo en Git se define como la forma en la que un equipo se organiza para realizar commits.
+Si se trata de un proyecto individual o de un equipo chico sin experiencia en Git, se puede usar solo la rama `main`.
+Hay varios enfoques para trabajar con ramas.
+El más simple es *GitHub Flow*: cada cambio se desarrolla en una rama, se revisa mediante un pull request y luego se fusiona a `main` para su despliegue.
+
+### Comandos básicos
+
+- Mostrar todas las ramas creadas e identificar la actual:
+
+    ```
+    git branch
+    ```
+
+- Crear la rama `feature/nuevarama` a partir de la rama `main` del repositorio remoto, y publicarla en el repositorio remoto:
+
+    ```
+    git checkout -b feature/nuevarama origin/main
+    git push -u origin feature/nuevarama
+    ```
+
+- Moverse a `feature/algunarama`:
+
+    ```
+    git checkout feature/algunarama
+    ```
+
+- Anadir a la rama `main` los cambios de `feature/otrarama`:
+
+    ```
+    git checkout main
+    git merge feature/otrarama
+    ```
+
+- Eliminar rama `feature/algunarama` del repositorio remoto:
+
+    ```
+    git push origin --delete feature/algunarama
+    ```
+
+### Agregar cambios de una rama en un solo commit
+
+&nbsp;
+Es posible combinar todos los cambios de una rama en un solo commit, en lugar de traer todos los commits individuales de esa rama:
+
+```
+git checkout main
+git merge --squash feature/algunarama
+```
+
+&nbsp;
+Luego, solo es necesario aclarar con un mensaje descriptivo cuáles son los cambios que se están incorporando en la rapa principal:
+
+```
+git commit -m "Incorpora algunarama"
+```
+
+## Comandos peligrosos
+
+&nbsp;
+Algunos comandos son útiles y hay algunas situaciones que solo se pueden resolver haciendo uso de estos. Pero pueden hacer que se pierda trabajo, por eso solo se usan con cuidado, o en ramas personales.
+
+- `--hard` borra cambios y commits sin posibilidad de recuperarlos fácilmente.
+
+- `--force` sobrescribe la historia remota, pudiendo borrar commits de otros colaboradores si ya habían hecho pull.
+
+- `rebase` reescribe el historial para que los commits parezcan hechos después de otros, reescribiendo los códigos hash de los commits.
+
+### Borrrar el último commit sin dejar rastro
+
+&nbsp;
+Elimina por completo el último commit (y sus cambios) del historial local.
+Luego, se fuerza que el remoto quede igual.
+
+```
+git reset --hard HEAD~1
+git push -f origin main
+```
+
+### Cambiar el mensaje del último commit
+
+&nbsp;
+Permite editar el último commit y actualiza el remoto con la nueva versión.
+
+```
+git commit --amend -m 'Nuevo mensaje'
+git push --force
+```
+
+### Combinar los últimos dos commits
+
+1. Asegurarse de estar en la rama correcta:
+
+    ```
+    git checkout nombre_de_la_rama
+    ```
+
+2. Iniciar un rebase interactivo:
+
+    ```
+    git rebase -i HEAD~2
+    ```
+
+   - Se abrirá un editor de texto mostrando los últimos dos commits:
+
+       ```
+       pick abc123 Mensaje del primer commit
+       pick def456 Mensaje del segundo commit
+       ```
+
+   - Cambiar el segundo pick por squash
+
+       ```
+       pick abc123 Mensaje del primer commit
+       squash def456 Mensaje del segundo commit
+       ```
+
+   - Guardar y salir del editor:
+
+       ```
+       :wq
+       ```
+
+   - Editar el mensaje del commit resultante de la misma forma.
+
+3. Si ya se había hecho push, cambiar el historial de la rama:
+
+    ```
+    git push origin nombre_de_la_rama --force
     ```
