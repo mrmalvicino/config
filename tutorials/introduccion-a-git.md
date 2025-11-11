@@ -294,6 +294,13 @@ El más simple es *GitHub Flow*: cada cambio se desarrolla en una rama, se revis
     git push origin --delete feature/algunarama
     ```
 
+- Eliminar todas las ramas locales que no existen de manera remota:
+
+    ```
+    git fetch --prune
+    git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
+    ```
+
 ### Agregar cambios de una rama en un solo commit
 
 &nbsp;
