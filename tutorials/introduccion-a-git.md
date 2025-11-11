@@ -11,6 +11,9 @@
   - [Crear un repositorio vacío](#crear-un-repositorio-vacío)
   - [Clonar un repositorio remoto](#clonar-un-repositorio-remoto)
   - [Sincronizar cambios por terminal](#sincronizar-cambios-por-terminal)
+  - [Git LFS](#git-lfs)
+    - [Configuración e instalación de Git LFS](#configuración-e-instalación-de-git-lfs)
+    - [Ejemplos de uso:](#ejemplos-de-uso)
 
 ## Conceptos básicos
 
@@ -168,4 +171,62 @@ Por única vez, es necesario instalar y configurar Git vinculando una cuenta de 
 6. Publicar los commits hechos en la rama `main` del repositorio remoto alojado en GitHub:
     ```
     git push
+    ```
+
+## Git LFS
+
+&nbsp;
+Git LFS o Large Files Storage es una biblioteca de Git que permite gestionar, como su nombre lo indica, archivos pesados.
+No solo optimiza la capacidad de almacenamiento, reduciendo el tamaño de los repositorios, sino que además permite que Git funcione más rápidamente, por ejemplo a la hora de hacer `pull` o `commit`.
+
+&nbsp;
+Git LFS es muy útil para versionar archivos binarios.
+Cuando versionamos un archivo con Git, no solo estamos guardando el estado actual del último commit sino que Git lleva un registro de los cambios.
+Con los archivos de texto plano, con código, Git no guarda una copia de un archivo por cada cambio que haya sufrido sino que gestiona muy eficientemente el espacio.
+Pero cuando se trata de archivos binarios, al cambiar el color de fondo de un logo PNG, o al agregar unos pocos píxeles en un gráfico, el repositorio guarda una copia de las viejas versiones de la imagen, ya que después de todo tiene que eventualmente poder recuperarlas.
+Esas copias no son visibles, y probablemente no vuelvan a ser utilizadas, pero ocupan espacio y son descargadas sucesivamente.
+
+&nbsp;
+Para sortear esta cuestión, Git LFS genera punteros en los repositorios locales, de manera que solo haya que descargar las versiones antiguas de los archivos binarios en caso de que sea necesario.
+En cualquier otra situación, basta con tener un puntero para saber dónde está el archivo real almacenado.
+
+### Configuración e instalación de Git LFS
+
+&nbsp;
+Luego de [descargar Git LFS](https://git-lfs.github.com/), basta con inicializarlo en cada repositorio que se requiera:
+
+```
+git lfs install
+```
+
+### Ejemplos de uso:
+
+- Guardar con Git LFS todos los archivos con extensión "png":
+
+    ```
+    git lfs track '*.png'
+    ```
+
+- Guardar con Git LFS todos los archivos con extensión "png" de la carpeta "images":
+
+    ```
+    git lfs track 'images/*.png'
+    ```
+
+- Guardar con Git LFS todos los archivos de la carpeta "images":
+
+    ```
+    git lfs track 'images/'
+    ```
+
+- Consultar una lista de lo que se está guardando con Git LFS:
+
+    ```
+    git lfs track
+    ```
+
+- Consultar el detalle de todos los archivos guardados con Git LFS:
+
+    ```
+    git lfs ls-files
     ```
