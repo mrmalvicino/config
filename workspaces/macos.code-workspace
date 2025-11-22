@@ -7,6 +7,9 @@
 			"path": "../../dsp-package"
 		},
 		{
+			"path": "../../electronics-notes"
+		},
+		{
 			"path": "../../latex-commons"
 		},
 		{
@@ -20,6 +23,9 @@
 		},
 		{
 			"path": "../../stus-calculator"
+		},
+		{
+			"path": "../../eym-tp1"
 		}
 	],
 	"settings": {
