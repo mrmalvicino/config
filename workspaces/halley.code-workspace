@@ -10,6 +10,9 @@
 			"path": "../../HalleyAdmin"
 		},
 		{
+			"path": "../../HalleyHeadOfficeV2"
+		},
+		{
 			"path": "../../HalleyService"
 		},
 		{
