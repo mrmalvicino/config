@@ -4,19 +4,22 @@
 			"path": ".."
 		},
 		{
-			"path": "../../halley-backup"
-		},
-		{
 			"path": "../../HalleyAdmin"
 		},
 		{
 			"path": "../../HalleyHeadOfficeV2"
 		},
 		{
+			"path": "../../HalleyQR"
+		},
+		{
 			"path": "../../HalleyService"
 		},
 		{
 			"path": "../../HalleyV2"
+		},
+		{
+			"path": "../../HalleyV2.MercadoPago"
 		},
 		{
 			"path": "../../OnboardingMaxi"
