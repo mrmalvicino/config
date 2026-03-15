@@ -4,6 +4,9 @@
 			"path": "../../amplivec-landing-page"
 		},
 		{
+			"path": ".."
+		},
+		{
 			"path": "../../dsp-notes"
 		},
 		{
@@ -16,19 +19,10 @@
 			"path": "../../latex-commons"
 		},
 		{
-			"path": ".."
-		},
-		{
 			"path": "../../mrmalvicino.github.io"
 		},
 		{
-			"path": "../../programacion-2"
-		},
-		{
 			"path": "../../stus-calculator"
-		},
-		{
-			"path": "../../eym-tp1"
 		}
 	],
 	"settings": {
