@@ -4,6 +4,9 @@
 			"path": ".."
 		},
 		{
+			"path": "../../Halley.Messaging"
+		},
+		{
 			"path": "../../HalleyAdmin"
 		},
 		{
