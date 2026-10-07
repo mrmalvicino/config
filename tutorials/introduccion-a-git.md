@@ -308,14 +308,23 @@ Es posible combinar todos los cambios de una rama en un solo commit, en lugar de
 
 ```
 git checkout main
-git merge --squash feature/algunarama
+git merge --squash develop
 ```
 
 &nbsp;
 Luego, solo es necesario aclarar con un mensaje descriptivo cuáles son los cambios que se están incorporando en la rapa principal:
 
 ```
-git commit -m "Incorpora algunarama"
+git commit -m "Merge de develop en main"
+```
+
+Finalmente, lo ideal es hacer que la rama mergiada quede actualizada con la que recibe los cambios:
+
+```
+git checkout develop
+git fetch origin
+git reset --hard origin/main
+git push --force-with-lease origin develop
 ```
 
 ## Comandos peligrosos
