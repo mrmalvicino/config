@@ -1,13 +1,37 @@
 {
 	"folders": [
 		{
+			"path": "../../acoustics-notes"
+		},
+		{
 			"path": "../../amplivec-landing-page"
 		},
 		{
 			"path": "../../amplivec-skills"
 		},
 		{
+			"path": "../../anc-research-plan"
+		},
+		{
+			"path": "../../arduino"
+		},
+		{
+			"path": "../../baluma-erp"
+		},
+		{
+			"path": "../../bancar"
+		},
+		{
+			"path": "../../biblio-api"
+		},
+		{
+			"path": "../../binary-calculator"
+		},
+		{
 			"path": ".."
+		},
+		{
+			"path": "../../decauciones"
 		},
 		{
 			"path": "../../dsp-notes"
@@ -16,19 +40,59 @@
 			"path": "../../dsp-package"
 		},
 		{
+			"path": "../../dugun-auto-clicker"
+		},
+		{
+			"path": "../../ecommerce-net"
+		},
+		{
 			"path": "../../electronics-notes"
+		},
+		{
+			"path": "../../irwins-revenge"
 		},
 		{
 			"path": "../../latex-commons"
 		},
 		{
+			"path": "../../link-tree"
+		},
+		{
+			"path": "../../math-notes"
+		},
+		{
+			"path": "../../meeni-erp"
+		},
+		{
+			"path": "../../membriana"
+		},
+		{
+			"path": "../../mrmalvicino"
+		},
+		{
 			"path": "../../mrmalvicino.github.io"
 		},
 		{
+			"path": "../../physics-book"
+		},
+		{
 			"path": "../../stus-calculator"
+		},
+		{
+			"path": "../../untref1"
+		},
+		{
+			"path": "../../utn1"
+		},
+		{
+			"path": "../../utn2"
+		},
+		{
+			"path": "../../utn3"
 		}
 	],
 	"settings": {
+		"scm.alwaysShowRepositories": true,
 		"files.associations": {
 			"iostream": "cpp",
 			"__bit_reference": "cpp",
